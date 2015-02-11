@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Untitled 1</title>
+<style type="text/css">
+.highlight .cp{color:#BC7A00}.highlight .cp{color:#BC7A00}*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}.highlight .k{color:#008000;font-weight:bold}.highlight .k{color:#008000;font-weight:bold}.highlight .nv{color:#19177C}.highlight .nv{color:#19177C}.highlight .nt{color:#008000;font-weight:bold}.highlight .nt{color:#008000;font-weight:bold}.highlight .na{color:#7D9029}.highlight .na{color:#7D9029}.highlight .s{color:#BA2121}.highlight .s{color:#BA2121}</style>
+</head>
+
+<body>
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+</body>
+
+</html>
